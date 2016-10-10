@@ -16,4 +16,6 @@ module.exports  = router;
 /*Set up the routes on the router.*/
 router.get('/', thisWillShowMain.home);
 
-router.get('/events', thisWiilShowEvents.events);
+router.get('/events', thisWiilShowEvents.all);
+
+router.get('/events/:slug', thisWiilShowEvents.single);
