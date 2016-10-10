@@ -3,7 +3,7 @@ const EventModel = require('../models/events');
 module.exports = {
 	showAll : showAll,
 	showSingle : showSingle,
-	addEvent : addEvent
+	deleteEvent : deleteEvent
 };
 
 function showAll(req,res){
@@ -32,28 +32,6 @@ function showSingle(req, res){
 	});	
 };
 
-function addEvent(req, res){
-	/*create some events*/
-	const events = [
-		{
-			name : "BasketBall",
-			description : "Throwing into a basket."
-		},
-		{
-			name : "Swimming",
-			description : "Micheal Phelps is the fastest swimmer."
-		},
-		{
-			name : "Weightlifting",
-			description : "Lifting heavy things up."
-		}
-	];
+function deleteEvent(req, res){
 
-	/*use the Event model to insert/save*/
-	for(event of events){
-		var newEvent = new EventModel(event);
-		newEvent.save();
-	}
-
-	res.send("Added events");
 }
