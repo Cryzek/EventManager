@@ -4,14 +4,11 @@
   "description": "\"CRUD style aplication for events\"",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cryzek/EventManager.git"
-  },
-  "scripts": {
-    "test": "node server.js"
   },
   "keywords": [
     "CRUD application",
@@ -24,8 +21,10 @@
   },
   "homepage": "https://github.com/Cryzek/EventManager#readme",
   "dependencies": {
+    "dotenv": "^2.0.0",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "express-ejs-layouts": "^2.2.0"
+    "express-ejs-layouts": "^2.2.0",
+    "mongoose": "^4.6.3"
   }
 }

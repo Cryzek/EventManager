@@ -4,12 +4,16 @@
 	Routes are imported from routes.js
 */
 
+/*Load environment variables*/
+require('dotenv').config();
+
 const express = require('express'),
 	  app = express(),
 	  expressLayouts = require('express-ejs-layouts'),
+	  mongoose = require('mongoose'),
 	  PORT = process.env.port || 8000;
 
-/*configure our application*/
+mongoose.connect(process.env.DBURI);
 
 /*serve the static assets*/
 app.use(express.static(__dirname + '/public') );
