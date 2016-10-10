@@ -6,16 +6,21 @@
 
 const express = require('express');
 /*Funny naming convention. Hehe*/
-var thisWillShowMain = require('./routeControllers/mainRouteCtrl'),
-	thisWiilShowEvents = require('./routeControllers/eventRouteCtrl');
+var home = require('./routeControllers/mainRouteCtrl'),
+	events = require('./routeControllers/eventRouteCtrl');
 
 var router = express.Router();
 /*export the router variable.*/
 module.exports  = router; 
 
 /*Set up the routes on the router.*/
-router.get('/', thisWillShowMain.home);
+router.get('/', home.showHome);
 
-router.get('/events', thisWiilShowEvents.all);
+/*show events*/
+router.get('/events', events.showAll);
 
-router.get('/events/:slug', thisWiilShowEvents.single);
+/*add events*/
+router.get('/events/add', events.addEvent);
+
+/*show a single event*/
+router.get('/events/:slug', events.showSingle);

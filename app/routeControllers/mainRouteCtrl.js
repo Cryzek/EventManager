@@ -4,7 +4,7 @@
 */
 
 module.exports = {
-	home : (req, res) => {
+	showHome : (req, res) => {
 		// ejs will look for pages in the views folder.(by default)
 		res.render('pages/home');
 	}
